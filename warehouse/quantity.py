@@ -2,4 +2,7 @@
 
 
 def parse_quantity(value: str) -> int:
-    return int(value.strip())
+    qty = int(value.strip())
+    if qty < 0:
+        raise ValueError("quantity must be non-negative")
+    return qty
